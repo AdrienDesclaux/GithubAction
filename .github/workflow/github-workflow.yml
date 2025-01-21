@@ -1,0 +1,23 @@
+name: Node test
+run-name: ${{ github.actor }} We are testing Github Action with Node.js
+
+on: [push]
+
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install dad-jokes package globally
+        run: npm install --global @mikemcbride/dad-jokes
+
+      - name: Display a dad joke
+        run: dad-jokes
