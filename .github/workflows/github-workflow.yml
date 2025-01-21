@@ -20,4 +20,9 @@ jobs:
         run: npm install --global @mikemcbride/dad-jokes
 
       - name: Display a dad joke
-        run: dad-jokes
+        run: dad-jokes > dad-joke.txt
+        git checkout -b dev
+        git add dad-joke.txt
+        git commit -m "Add dad joke"
+        git push origin dev
+            
