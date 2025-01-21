@@ -20,4 +20,4 @@ jobs:
         run: npm install --global @mikemcbride/dad-jokes
 
       - name: Display a dad joke
-        run: dad-jokes > dad-joke.txt && git config user.email "adrien.desclaux@outlook.fr" && git config user.name "AdrienDesclaux" && git checkout -b dev && git add dad-joke.txt && git commit -m "Add dad joke" && git push origin dev
+        run: dad-jokes > dad-joke.txt && git config user.email "github-actions[bot]" && git config user.name "github-actions[bot]@users.noreply.github.com" && git checkout -b dev && git add dad-joke.txt && git commit -m "${{github.event_name}}-by-${{github.actor}}" && git push origin dev --force
